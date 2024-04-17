@@ -47,8 +47,8 @@ class TestFreelancer(unittest.TestCase):
 class TestProject(unittest.TestCase):
     def setUp(self):
         freelancer = project.Freelancer("TestUser", "")
-        self.project = freelancer.add_project("TestProject", "TDesc", "TDls",
-                                              100, 20)
+        freelancer.add_project("TestProject", "TDesc", "TDls", 100, 20)
+        self.project = freelancer.get_project("TestProject")
 
     def generate_task(self):
         self.project.add_task("TestTask", "TDesc")
